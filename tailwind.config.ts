@@ -6,6 +6,13 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'hidden',
+    'block',
+    'brightness-50',
+   'hover:brightness-75',
+    
+  ],
   theme: {
     extend: {
       backgroundImage: {
