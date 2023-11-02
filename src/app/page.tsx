@@ -141,7 +141,7 @@ export default function Home() {
          const isSelected = selectedItems.includes(data.imgUrl);
          const brightnessClass = isFirstIndex
            ? isSelected
-             ? "brightness-50"
+             ? "brightness-50 group col-span-2 row-span-2"
              : "hover:brightness-75 hover:brightness-50 transition group col-span-2 row-span-2"
            : isSelected
            ? "brightness-50"
