@@ -11,7 +11,7 @@ Create a responsive image gallery using React JS with features like reordering, 
 - Smooth and responsive user experience with implemented transitions and animations.
 
 ## Live Demo
-Access the live demo of the React JS image gallery [here]().
+Access the live demo of the React JS image gallery [here](https://fresher-react-js.vercel.app/).
 
 ## Screenshots and Video Walkthrough
 - Include screenshots or a video walkthrough showcasing the functionality and user interface of the image gallery.
@@ -20,7 +20,10 @@ Access the live demo of the React JS image gallery [here]().
 ## Project Sample
 ![Project Sample](/assets/image-gallery-screenshot.png)
 
-![Project Sample video](/assets/image-gallery-screencast.mov)
+
+## Project Sample Video Explanation
+You can download the project sample video from this [link](/assets/image-gallery-screencast.mov).
+
 
 
 
