@@ -37,6 +37,3 @@ Follow these steps to run the project locally:
 2. View Live:
    ```sh
    https://fresher-react-js.vercel.app/
-
-
-
