@@ -104,7 +104,7 @@ export default function Home() {
     setSelectAll(false);
   };
   return (
-    <main className="container bg-white rounded-lg drop-shadow p-4 sm:p-6">
+    <main className="container bg-white rounded-lg drop-shadow p-4 sm:p-6 h-full lg:h-auto">
       {selectedItems.length > 0 ? (
         <header className="p-4 sm:p-5 flex w-full border-b justify-between items-center">
           <div className="flex items-center gap-5">
@@ -140,7 +140,7 @@ export default function Home() {
           Gallery
         </header>
       )}
-      <main className="w-full h-[80vh] p-5 grid grid-rows-3 grid-cols-5 gap-4">
+      <main className="w-full lg:h-[80vh] p-5 grid lg:grid-rows-3 lg:grid-cols-5 gap-4 h-full">
         {imagesData.map((data, index) => {
           const isFirstIndex = index === 0;
           const isSelected = selectedItems.includes(data.imgUrl);
