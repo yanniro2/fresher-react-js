@@ -102,9 +102,9 @@ export default function Home() {
     setSelectAll(false);
   };
   return (
-    <main className="container bg-white rounded-lg drop-shadow">
+    <main className="container bg-white rounded-lg drop-shadow p-4 sm:p-6">
       {selectedItems.length > 0 ? (
-        <header className="p-5 flex w-full h-[4rem] border-b justify-between items-center">
+        <header className="p-4 sm:p-5 flex w-full border-b justify-between items-center">
           <div className="flex items-center gap-5">
             <input
               type="checkbox"
