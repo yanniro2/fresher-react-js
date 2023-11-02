@@ -92,84 +92,94 @@ export default function Home() {
     }
   };
 
-  return (
-    <main className="container bg-white rounded-lg drop-shadow">
-      {selectedItems.length > 0 ? (
-        <header className="p-5 flex w-full h-[4rem] border-b justify-between items-center">
-          <div className="flex items-center gap-5">
-            <input
-              type="checkbox"
-              name="select"
-              id="select"
-              checked={selectAll}
-              onChange={handleCheckboxChange}
-            />
-            <label
-              htmlFor="select"
-              className="flex items-center gap-2 font-bold">
-              <span>{selectedItems.length}</span> Files Selected
-            </label>
-          </div>
-          <button className="text-red-600 font-semibold">Delete files</button>
-        </header>
-      ) : (
-        <header className="p-5 w-full h-[4rem] border-b font-bold">
-          Gallery
-        </header>
-      )}
-      <main className="w-full h-[80vh] p-5 grid grid-rows-3 grid-cols-5 gap-4">
-        {imagesData.map((data, index) => {
-          const isFirstIndex = index === 0;
-          const isSelected = selectedItems.includes(data.imgUrl);
-          const brightnessClass = isFirstIndex
-            ? isSelected
-              ? "brightness-50"
-              : "hover:brightness-75 hover:brightness-50 transition group col-span-2 row-span-2"
-            : isSelected
-            ? "brightness-50"
-            : "hover:brightness-75 bg-white p-4 text-center rounded-lg drop-shadow transition group";
+ const handleDelete = () => {
+   const remainingImages = imagesData.filter(
+     (item) => !selectedItems.includes(item.imgUrl)
+   );
+   setImagesData(remainingImages);
+   setSelectedItems([]);
+   setSelectAll(false);
+ };
+ return (
+   <main className="container bg-white rounded-lg drop-shadow">
+     {selectedItems.length > 0 ? (
+       <header className="p-5 flex w-full h-[4rem] border-b justify-between items-center">
+         <div className="flex items-center gap-5">
+           <input
+             type="checkbox"
+             name="select"
+             id="select"
+             checked={selectAll}
+             onChange={handleCheckboxChange}
+           />
+           <label
+             htmlFor="select"
+             className="flex items-center gap-2 font-bold">
+             <span>{selectedItems.length}</span> Files Selected
+           </label>
+         </div>
+         <button className="text-red-600 font-semibold" onClick={handleDelete}>
+           Delete files
+         </button>
+       </header>
+     ) : (
+       <header className="p-5 w-full h-[4rem] border-b font-bold">
+         Gallery
+       </header>
+     )}
+     <main className="w-full h-[80vh] p-5 grid grid-rows-3 grid-cols-5 gap-4">
+       {imagesData.map((data, index) => {
+         const isFirstIndex = index === 0;
+         const isSelected = selectedItems.includes(data.imgUrl);
+         const brightnessClass = isFirstIndex
+           ? isSelected
+             ? "brightness-50"
+             : "hover:brightness-75 hover:brightness-50 transition group col-span-2 row-span-2"
+           : isSelected
+           ? "brightness-50"
+           : "hover:brightness-75 bg-white p-4 text-center rounded-lg drop-shadow transition group";
 
-          return (
-            <div
-              key={data.imgUrl}
-              className={brightnessClass}
-              draggable
-              onDragStart={() => (dragPerson.current = index)}
-              onDragEnter={() => (dragOverPerson.current = index)}
-              onDragEnd={handleSort}
-              onDragOver={(e) => e.preventDefault()}>
-              <label htmlFor={data.imgUrl}>
-                <Image
-                  src={data.imgUrl}
-                  alt="img url"
-                  width={isFirstIndex ? 400 : 100}
-                  height={isFirstIndex ? 400 : 100}
-                  className={
-                    isFirstIndex
-                      ? "w-full h-full object-cover bg-white text-center rounded-lg drop-shadow"
-                      : "w-full h-full object-cover"
-                  }
-                  key={data.imgUrl}
-                />
-              </label>
-              <input
-                type="checkbox"
-                name={data.imgUrl}
-                id={data.imgUrl}
-                className={`${
-                  isSelected ? "block" : "hidden group-hover:block"
-                } absolute z-10 top-5 left-5`}
-                onChange={handleCheckboxChange}
-                checked={selectAll || isSelected}
-              />
-            </div>
-          );
-        })}
+         return (
+           <div
+             key={data.imgUrl}
+             className={brightnessClass}
+             draggable
+             onDragStart={() => (dragPerson.current = index)}
+             onDragEnter={() => (dragOverPerson.current = index)}
+             onDragEnd={handleSort}
+             onDragOver={(e) => e.preventDefault()}>
+             <label htmlFor={data.imgUrl}>
+               <Image
+                 src={data.imgUrl}
+                 alt="img url"
+                 width={isFirstIndex ? 400 : 100}
+                 height={isFirstIndex ? 400 : 100}
+                 className={
+                   isFirstIndex
+                     ? "w-full h-full object-cover bg-white text-center rounded-lg drop-shadow"
+                     : "w-full h-full object-cover"
+                 }
+                 key={data.imgUrl}
+               />
+             </label>
+             <input
+               type="checkbox"
+               name={data.imgUrl}
+               id={data.imgUrl}
+               className={`${
+                 isSelected ? "block" : "hidden group-hover:block"
+               } absolute z-10 top-5 left-5`}
+               onChange={handleCheckboxChange}
+               checked={selectAll || isSelected}
+             />
+           </div>
+         );
+       })}
 
-        <div className="capitalize bg-gray-100 rounded-lg flex items-center justify-center border-dashed border cursor-pointer">
-          add images
-        </div>
-      </main>
-    </main>
-  );
+       <div className="capitalize bg-gray-100 rounded-lg flex items-center justify-center border-dashed border cursor-pointer">
+         add images
+       </div>
+     </main>
+   </main>
+ );
 }
