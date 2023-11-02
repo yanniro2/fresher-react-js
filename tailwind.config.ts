@@ -16,6 +16,7 @@ const config: Config = {
     "group",
     "col-span-2",
     "row-span-2",
+    "cursor-pointer",
   ],
   theme: {
     extend: {
