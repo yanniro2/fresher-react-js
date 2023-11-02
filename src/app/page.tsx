@@ -10,6 +10,8 @@ interface ImageData {
 }
 
 export default function Home() {
+
+  const transitionClass = "transition-all duration-300 ease-in-out";
   const [imagesData, setImagesData] = useState<ImageData[]>([
     {
       id: 1,
@@ -153,12 +155,15 @@ export default function Home() {
           return (
             <div
               key={data.imgUrl}
-              className={`${brightnessClass} cursor-pointer`}
+              className={`${brightnessClass} ${transitionClass} cursor-pointer`}
               draggable
               onDragStart={() => (dragPerson.current = index)}
               onDragEnter={() => (dragOverPerson.current = index)}
               onDragEnd={handleSort}
-              onDragOver={(e) => e.preventDefault()}>
+              onDragOver={(e) => e.preventDefault()}
+              style={{
+                transition: "filter 0.3s ease",
+              }}>
               <label htmlFor={data.imgUrl}>
                 <Image
                   src={data.imgUrl}

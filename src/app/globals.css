@@ -16,4 +16,16 @@
   }
 }
 
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
 
