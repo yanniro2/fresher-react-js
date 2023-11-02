@@ -115,11 +115,19 @@ export default function Home() {
            <label
              htmlFor="select"
              className="flex items-center gap-2 font-bold">
-             <span>{selectedItems.length}</span> Files Selected
+             <span>
+               {selectedItems.length === 1 ? (
+                 <span>A</span>
+               ) : (
+                 selectedItems.length
+               )}
+             </span>{" "}
+             File
+             {selectedItems.length > 1 ? "s" : ""} Selected
            </label>
          </div>
          <button className="text-red-600 font-semibold" onClick={handleDelete}>
-           Delete files
+           Delete file{selectedItems.length > 1 ? "s" : ""}
          </button>
        </header>
      ) : (
