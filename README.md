@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React JS Image Gallery
 
-## Getting Started
+## Objective
+Create a responsive image gallery using React JS with features like reordering, deleting multiple images, and setting a feature image. The gallery aims to provide a visually appealing and seamless user experience.
 
-First, run the development server:
+## Features
+- Grid layout displaying images with a distinct feature image.
+- Reordering functionality for arranging images within the gallery.
+- Deleting multiple images with clear visual indication of selected items.
+- Setting a feature image by sorting, considering the first image from the left-to-right direction.
+- Smooth and responsive user experience with implemented transitions and animations.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
+Access the live demo of the React JS image gallery [here]().
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Screenshots and Video Walkthrough
+- Include screenshots or a video walkthrough showcasing the functionality and user interface of the image gallery.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Project Sample
+![Project Sample](/assets/image-gallery-screenshot.png)
 
-## Learn More
+![Project Sample video](/assets/image-gallery-screencast.mov)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Setup and Usage
+Follow these steps to run the project locally:
 
-## Deploy on Vercel
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yanniro2/fresher-react-js.git
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. View Live:
+   ```sh
+   https://fresher-react-js.vercel.app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
